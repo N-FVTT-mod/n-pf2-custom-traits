@@ -1,0 +1,18 @@
+{
+  "id": "n-pf2-custom-traits",
+  "title": "N PF2E Custom Traits",
+  "description": "Create reusable PF2E custom traits with stable rule slugs, per-category applicability, import/export, and optional PF2E Rule Elements.",
+  "version": "1.0.0",
+  "authors": [{"name": "Minstrel N"}],
+  "compatibility": {"minimum": "14", "verified": "14.367"},
+  "relationships": {
+    "systems": [{"id": "pf2e", "type": "system", "compatibility": {"minimum": "8.0.0", "verified": "8.5.1"}}],
+    "requires": [], "recommends": [], "conflicts": []
+  },
+  "esmodules": ["scripts/main.mjs"],
+  "styles": ["styles/custom-traits.css"],
+  "languages": [
+    {"lang": "en", "name": "English", "path": "lang/en.json"},
+    {"lang": "zh-CN", "name": "简体中文", "path": "lang/zh-CN.json"}
+  ]
+}
