@@ -1,0 +1,25 @@
+{
+  "n-pf2-custom-traits": {
+    "settings": {
+      "manager": {"name": "自定义特征", "label": "管理自定义特征", "hint": "创建世界级 PF2E 自定义特征，并设置稳定规则代码、适用范围、描述及可选规则元素。"},
+      "traits": {"name": "自定义特征", "hint": "保存的自定义特征定义。"},
+      "debug": {"name": "调试模式", "hint": "在浏览器控制台输出额外诊断信息。"}
+    },
+    "ui": {
+      "title": "PF2E 自定义特征", "subtitle": "创建具有稳定规则代码的可复用世界特征。", "import": "导入", "export": "导出", "add": "新增特征", "search": "搜索名称、规则代码或描述", "noSearchResults": "没有匹配的特征", "noTraits": "尚未创建自定义特征", "unnamed": "未命名特征", "unset": "未设置", "delete": "删除特征", "label": "显示名称", "ruleId": "规则代码", "ruleIdHint": "供 PF2E Roll Option 与 Predicate 使用。已保存代码会锁定；需要修改时使用重命名并自动迁移。", "renameId": "重命名规则代码", "description": "特征描述", "optional": "选填", "applicability": "适用范围", "applicabilityHint": "新建特征默认启用全部支持类型。", "all": "全选", "none": "全不选", "ruleElements": "规则元素", "ruleElementsHelp": "按 PF2E 物品规则的方式逐条填写 Rule Element：每个编辑框只填写一个 JSON 对象，不需要外层 [ ]。带有该特征的内嵌 Item 为 Actor 准备数据时，这些规则将交由 PF2E 原生 Rule Element 流程执行。", "formatJson": "格式化 JSON", "addRuleElement": "添加规则元素", "removeRuleElement": "删除规则元素", "ruleElementNumber": "规则元素 {number}", "noRuleElements": "尚未添加规则元素。", "emptyTitle": "创建第一条自定义特征", "emptyHint": "保存后，该特征会出现在你所选择的 PF2E 特征类别中。", "addFirst": "创建特征", "footerHint": "所有修改仅在保存后生效；已有 slug 的重命名与删除会自动迁移世界引用。", "save": "保存并应用"
+    },
+    "scopes": {
+      "groups": {"items": "动作与规则内容", "equipment": "装备", "actors": "角色与身份", "campaign": "战役"},
+      "actionTraits": "动作", "effectTraits": "效果", "featTraits": "专长与职业特性", "spellTraits": "法术", "weaponTraits": "武器", "npcAttackTraits": "NPC 攻击", "shieldTraits": "盾牌", "equipmentTraits": "装备", "armorTraits": "护甲", "consumableTraits": "消耗品", "creatureTraits": "生物", "hazardTraits": "危害", "vehicleTraits": "载具", "ancestryTraits": "族裔", "classTraits": "职业", "kingmakerTraits": "王冠之战战役特性"
+    },
+    "common": {"delete": "删除", "cancel": "取消"},
+    "dialogs": {
+      "delete": {"title": "移除特征", "content": "从当前草稿中移除 <strong>{label}</strong>？在点击保存前不会修改世界数据。"},
+      "rename": {"title": "重命名规则代码", "hint": "保存时会迁移世界中的特征引用，以及 Rule Element 内与该特征有关的 Roll Option 引用。", "submit": "使用新代码"},
+      "migrate": {"title": "迁移自定义特征数据", "content": "本次保存将修改或删除 {changes} 个既有规则代码，目前有 {references} 个世界文档直接使用它们。", "note": "迁移完成前会保留临时兼容别名，避免旧数据因 CONFIG 变化而失效。", "submit": "保存并迁移"},
+      "import": {"title": "导入自定义特征", "file": "JSON 文件", "hint": "“合并”会更新同 slug 项并保留其他特征；“替换”会替换整个草稿。两种方式都需要最后点击保存才会写入世界。", "merge": "合并", "replace": "替换"}
+    },
+    "notifications": {"saved": "自定义特征已保存并应用。", "imported": "特征文件已载入编辑器；点击保存后才会应用。", "pendingMigrationFinished": "此前中断的自定义特征迁移已完成。"},
+    "errors": {"required": "第 {row} 条特征必须填写规则代码和显示名称。", "invalidId": "第 {row} 条特征的规则代码“{id}”无效。必须以英文字母开头，并仅使用小写字母、数字和连字符。", "invalidIdShort": "规则代码“{id}”无效。必须以英文字母开头，并仅使用小写字母、数字和连字符。", "duplicateId": "规则代码“{id}”重复。", "reservedId": "规则代码“{id}”与 PF2E 或其他已加载模块的既有特征冲突。", "ruleKey": "第 {row} 条特征的第 {rule} 个 Rule Element 缺少 key。", "import": "无法导入特征：{message}", "saveMigration": "自定义特征未能完整保存或迁移。必要的兼容别名已保留，请检查控制台后重试。", "pendingMigration": "待完成的自定义特征迁移仍未成功；兼容别名将继续保留。", "ruleEmpty": "第 {row} 条特征的第 {rule} 个 Rule Element 为空。请填写规则对象或删除该规则框。", "ruleJsonIndexed": "第 {row} 条特征的第 {rule} 个 Rule Element JSON 无效：{message}", "ruleObject": "第 {row} 条特征的第 {rule} 个 Rule Element 必须是单个 JSON 对象，不需要外层 [ ]。"}
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "n-pf2-custom-traits": {
+    "settings": {
+      "manager": {"name": "Custom Traits", "label": "Manage Custom Traits", "hint": "Create world-level PF2E traits with stable rule slugs, applicability, descriptions, and optional Rule Elements."},
+      "traits": {"name": "Custom Traits", "hint": "Stored custom trait definitions."},
+      "debug": {"name": "Debug Mode", "hint": "Write additional diagnostic information to the browser console."}
+    },
+    "ui": {
+      "title": "PF2E Custom Traits", "subtitle": "Create reusable world traits with stable rule slugs.", "import": "Import", "export": "Export", "add": "New Trait", "search": "Search name, slug, or description", "noSearchResults": "No matching traits", "noTraits": "No custom traits yet", "unnamed": "Unnamed Trait", "unset": "Not set", "delete": "Delete Trait", "label": "Display Name", "ruleId": "Rule Slug", "ruleIdHint": "Used by PF2E roll options and predicates. Existing slugs are locked; use Rename to migrate them safely.", "renameId": "Rename Rule Slug", "description": "Description", "optional": "Optional", "applicability": "Applicability", "applicabilityHint": "New traits enable every supported category by default.", "all": "All", "none": "None", "ruleElements": "Rule Elements", "ruleElementsHelp": "Enter Rule Elements one at a time, like PF2E item rules: each editor contains one JSON object and does not use outer [ ] brackets. When an embedded Item carrying this trait prepares Actor data, these rules are passed to PF2E's native Rule Element pipeline.", "formatJson": "Format JSON", "addRuleElement": "Add Rule Element", "removeRuleElement": "Remove Rule Element", "ruleElementNumber": "Rule Element {number}", "noRuleElements": "No Rule Elements added.", "emptyTitle": "Create your first custom trait", "emptyHint": "The trait will become available in the PF2E categories you select.", "addFirst": "Create Trait", "footerHint": "Changes take effect only after Save. Slug renames and deletions migrate world references.", "save": "Save and Apply"
+    },
+    "scopes": {
+      "groups": {"items": "Actions & Rules", "equipment": "Equipment", "actors": "Actors & Identity", "campaign": "Campaign"},
+      "actionTraits": "Actions", "effectTraits": "Effects", "featTraits": "Feats & Features", "spellTraits": "Spells", "weaponTraits": "Weapons", "npcAttackTraits": "NPC Attacks", "shieldTraits": "Shields", "equipmentTraits": "Equipment", "armorTraits": "Armor", "consumableTraits": "Consumables", "creatureTraits": "Creatures", "hazardTraits": "Hazards", "vehicleTraits": "Vehicles", "ancestryTraits": "Ancestries", "classTraits": "Classes", "kingmakerTraits": "Kingmaker Campaign Features"
+    },
+    "common": {"delete": "Delete", "cancel": "Cancel"},
+    "dialogs": {
+      "delete": {"title": "Remove Trait", "content": "Remove <strong>{label}</strong> from this draft? World data is not changed until you save."},
+      "rename": {"title": "Rename Rule Slug", "hint": "Saving will migrate trait assignments and trait roll-option references in world Rule Elements.", "submit": "Use New Slug"},
+      "migrate": {"title": "Migrate Custom Trait Data", "content": "This save changes or removes {changes} existing slug(s). {references} world document(s) currently use them.", "note": "The module will keep temporary compatibility aliases until migration completes.", "submit": "Save and Migrate"},
+      "import": {"title": "Import Custom Traits", "file": "JSON File", "hint": "Merge updates matching slugs and preserves other traits. Replace substitutes the entire draft; nothing is written until Save.", "merge": "Merge", "replace": "Replace"}
+    },
+    "notifications": {"saved": "Custom traits saved and applied.", "imported": "Trait file loaded into the editor. Save to apply it.", "pendingMigrationFinished": "A previously interrupted custom-trait migration was completed."},
+    "errors": {"required": "Trait {row} requires a rule slug and display name.", "invalidId": "Trait {row} has invalid rule slug '{id}'. Start with a letter and use only lowercase letters, numbers, and hyphens.", "invalidIdShort": "Invalid rule slug '{id}'. Start with a letter and use only lowercase letters, numbers, and hyphens.", "duplicateId": "Rule slug '{id}' is duplicated.", "reservedId": "Rule slug '{id}' conflicts with an existing PF2E or module trait.", "ruleKey": "Trait {row}, Rule Element {rule} is missing a key.", "import": "Could not import traits: {message}", "saveMigration": "Custom traits could not be fully saved or migrated. Compatibility aliases were retained when needed; check the console and retry.", "pendingMigration": "A pending custom-trait migration could not be completed. Compatibility aliases remain active.", "ruleEmpty": "Trait {row}, Rule Element {rule} is empty. Enter one rule object or remove the editor.", "ruleJsonIndexed": "Trait {row}, Rule Element {rule} has invalid JSON: {message}", "ruleObject": "Trait {row}, Rule Element {rule} must be a single JSON object without outer [ ] brackets."}
+  }
+}

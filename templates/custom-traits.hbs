@@ -1,0 +1,90 @@
+<form class="npf2ct" autocomplete="off">
+  <header class="npf2ct-header">
+    <div class="npf2ct-heading">
+      <i class="fa-solid fa-tags" aria-hidden="true"></i>
+      <div>
+        <h2>{{localize "n-pf2-custom-traits.ui.title"}}</h2>
+        <p>{{localize "n-pf2-custom-traits.ui.subtitle"}}</p>
+      </div>
+    </div>
+    <div class="npf2ct-header-actions">
+      <button type="button" data-action="import"><i class="fa-solid fa-file-import"></i>{{localize "n-pf2-custom-traits.ui.import"}}</button>
+      <button type="button" data-action="export"><i class="fa-solid fa-file-export"></i>{{localize "n-pf2-custom-traits.ui.export"}}</button>
+      <button type="button" class="primary" data-action="add-trait"><i class="fa-solid fa-plus"></i>{{localize "n-pf2-custom-traits.ui.add"}}</button>
+    </div>
+  </header>
+
+  <div class="npf2ct-body">
+    <aside class="npf2ct-browser">
+      <div class="npf2ct-search"><i class="fa-solid fa-magnifying-glass"></i><input type="search" data-role="search" placeholder="{{localize 'n-pf2-custom-traits.ui.search'}}"></div>
+      {{#if hasTraits}}
+      <div class="npf2ct-list">
+        {{#each traits as |trait|}}
+        <button type="button" class="npf2ct-list-item {{#if trait.isSelected}}is-active{{/if}}" data-action="select-trait" data-uid="{{trait.uid}}" data-search="{{trait.searchText}}">
+          <span class="npf2ct-list-name">{{trait.displayLabel}}</span><span class="npf2ct-list-code">{{trait.displayId}}</span>
+        </button>
+        {{/each}}
+        <div class="npf2ct-search-empty" data-role="search-empty" hidden>{{localize "n-pf2-custom-traits.ui.noSearchResults"}}</div>
+      </div>
+      {{else}}
+      <div class="npf2ct-browser-empty"><i class="fa-solid fa-tags"></i><span>{{localize "n-pf2-custom-traits.ui.noTraits"}}</span></div>
+      {{/if}}
+    </aside>
+
+    <section class="npf2ct-detail">
+      {{#if selectedTrait}}
+      <header class="npf2ct-detail-header">
+        <div><strong data-role="detail-name">{{selectedTrait.displayLabel}}</strong><code data-role="detail-code">{{selectedTrait.displayId}}</code></div>
+        <button type="button" class="danger icon-only" data-action="delete-trait" data-tooltip="{{localize 'n-pf2-custom-traits.ui.delete'}}"><i class="fa-solid fa-trash"></i></button>
+      </header>
+      <div class="npf2ct-editor">
+        <div class="npf2ct-grid two">
+          <label class="npf2ct-field"><span>{{localize "n-pf2-custom-traits.ui.label"}}</span><input data-field="label" type="text" value="{{selectedTrait.label}}"></label>
+          <label class="npf2ct-field"><span>{{localize "n-pf2-custom-traits.ui.ruleId"}}</span><div class="npf2ct-id-row"><input data-field="id" type="text" value="{{selectedTrait.id}}" {{#if selectedTrait.idLocked}}readonly{{/if}}>{{#if selectedTrait.idLocked}}<button type="button" class="icon-only" data-action="rename-id" data-tooltip="{{localize 'n-pf2-custom-traits.ui.renameId'}}"><i class="fa-solid fa-pen"></i></button>{{/if}}</div><small>{{localize "n-pf2-custom-traits.ui.ruleIdHint"}}</small></label>
+        </div>
+
+        <label class="npf2ct-field"><span>{{localize "n-pf2-custom-traits.ui.description"}} <em>{{localize "n-pf2-custom-traits.ui.optional"}}</em></span><textarea data-field="description" rows="3">{{selectedTrait.description}}</textarea></label>
+
+        <fieldset class="npf2ct-scopes"><legend>{{localize "n-pf2-custom-traits.ui.applicability"}}</legend>
+          <div class="npf2ct-scope-toolbar"><span>{{localize "n-pf2-custom-traits.ui.applicabilityHint"}}</span><div><button type="button" data-action="scope-all">{{localize "n-pf2-custom-traits.ui.all"}}</button><button type="button" data-action="scope-none">{{localize "n-pf2-custom-traits.ui.none"}}</button></div></div>
+          <div class="npf2ct-scope-groups">
+            {{#each scopeGroups as |group|}}
+            <div class="npf2ct-scope-group"><strong>{{group.label}}</strong><div>
+              {{#each group.scopes as |scope|}}<label><input type="checkbox" data-scope="{{scope.key}}" {{checked scope.checked}}><span>{{scope.label}}</span></label>{{/each}}
+            </div></div>
+            {{/each}}
+          </div>
+        </fieldset>
+
+        <section class="npf2ct-field npf2ct-rules">
+          <div class="npf2ct-rules-heading">
+            <span>{{localize "n-pf2-custom-traits.ui.ruleElements"}} <em>{{localize "n-pf2-custom-traits.ui.optional"}}</em></span>
+            <button type="button" data-action="add-rule"><i class="fa-solid fa-plus"></i>{{localize "n-pf2-custom-traits.ui.addRuleElement"}}</button>
+          </div>
+          <small>{{ruleElementsHelp}}</small>
+          <div class="npf2ct-rule-list">
+            {{#each selectedTrait.ruleEditors as |rule|}}
+            <article class="npf2ct-rule-card" data-rule-card="{{rule.index}}">
+              <header>
+                <strong>{{localize "n-pf2-custom-traits.ui.ruleElementNumber" number=rule.number}}</strong>
+                <div>
+                  <button type="button" class="icon-only" data-action="format-rule" data-rule-index="{{rule.index}}" data-tooltip="{{localize 'n-pf2-custom-traits.ui.formatJson'}}"><i class="fa-solid fa-code"></i></button>
+                  <button type="button" class="danger icon-only" data-action="remove-rule" data-rule-index="{{rule.index}}" data-tooltip="{{localize 'n-pf2-custom-traits.ui.removeRuleElement'}}"><i class="fa-solid fa-trash"></i></button>
+                </div>
+              </header>
+              <textarea data-rule-index="{{rule.index}}" rows="7" spellcheck="false">{{rule.text}}</textarea>
+            </article>
+            {{else}}
+            <div class="npf2ct-rules-empty">{{localize "n-pf2-custom-traits.ui.noRuleElements"}}</div>
+            {{/each}}
+          </div>
+        </section>
+      </div>
+      {{else}}
+      <div class="npf2ct-detail-empty"><i class="fa-solid fa-tags"></i><strong>{{localize "n-pf2-custom-traits.ui.emptyTitle"}}</strong><p>{{localize "n-pf2-custom-traits.ui.emptyHint"}}</p><button type="button" class="primary" data-action="add-trait"><i class="fa-solid fa-plus"></i>{{localize "n-pf2-custom-traits.ui.addFirst"}}</button></div>
+      {{/if}}
+    </section>
+  </div>
+
+  <footer class="npf2ct-footer"><span><i class="fa-solid fa-circle-info"></i>{{localize "n-pf2-custom-traits.ui.footerHint"}}</span><button type="submit" class="primary"><i class="fa-solid fa-floppy-disk"></i>{{localize "n-pf2-custom-traits.ui.save"}}</button></footer>
+</form>
