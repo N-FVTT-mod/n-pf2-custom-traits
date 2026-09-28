@@ -38,16 +38,25 @@ Compendium source documents are not modified automatically.
 
 <div align="center">
 
-## More PF2E-Focused Modules on Patreon
-
+<a href="YOUR_PATREON_URL">
+  <img
+    src="https://img.shields.io/badge/More%20PF2E--Focused%20Modules%20on%20Patreon-7B5CD6?style=for-the-badge"
+    alt="More PF2E-Focused Modules on Patreon"
+    height="42"
+  >
+</a>
+<br><br>
 N-FVTT-MOD is dedicated to building practical enhancements specifically for the **Pathfinder Second Edition system on Foundry VTT**.
 
 Our Patreon includes additional premium modules focused on improving PF2E gameplay, GM workflows, interface usability, automation, and system-specific features.
 
-<br>
+<br><br>
 
-<a href="YOUR_PATREON_URL">
-  <img src="https://img.shields.io/badge/Patreon-Explore%20Premium%20PF2E%20Modules-FF424D?style=for-the-badge&logo=patreon&logoColor=white" alt="N-FVTT-MOD on Patreon">
+<a href="https://www.patreon.com/cw/Minstrel_N">
+  <img
+    src="https://img.shields.io/badge/Patreon-Explore%20Premium%20PF2E%20Modules-FF424D?style=for-the-badge&logo=patreon&logoColor=white"
+    alt="N-FVTT-MOD on Patreon"
+  >
 </a>
 
 <br><br>
