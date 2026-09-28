@@ -34,9 +34,6 @@ Renaming a saved trait updates its existing references in the world. Deleting a 
 
 Compendium source documents are not modified automatically.
 
-## Debugging
-
-Enable **Debug Mode** in module settings if additional diagnostic information is needed. Normal use does not produce development logs.
 ---
 
 <div align="center">
