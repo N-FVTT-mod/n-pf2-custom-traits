@@ -40,7 +40,7 @@ Compendium source documents are not modified automatically.
 <a href=https://www.patreon.com/cw/Minstrel_N>
   <img
     src="./assets/patreon-banner.svg"
-    alt="More PF2E-Focused Modules on Patreon"
+    alt="More Detailed Modules Display on Patreon"
     width="620"
   >
 </a>
