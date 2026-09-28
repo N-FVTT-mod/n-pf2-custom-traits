@@ -35,22 +35,22 @@ Renaming a saved trait updates its existing references in the world. Deleting a 
 Compendium source documents are not modified automatically.
 
 ---
-
 <div align="center">
 
-<a href="YOUR_PATREON_URL">
+<a href=https://www.patreon.com/cw/Minstrel_N>
   <img
-    src="https://img.shields.io/badge/More%20PF2E--Focused%20Modules%20on%20Patreon-7B5CD6?style=for-the-badge"
+    src="./assets/patreon-banner.svg"
     alt="More PF2E-Focused Modules on Patreon"
-    height="42"
+    width="620"
   >
 </a>
-<br><br>
+
+</div>
+<br>
 N-FVTT-MOD is dedicated to building practical enhancements specifically for the **Pathfinder Second Edition system on Foundry VTT**.
 
 Our Patreon includes additional premium modules focused on improving PF2E gameplay, GM workflows, interface usability, automation, and system-specific features.
-
-<br><br>
+<div align="center">
 
 <a href="https://www.patreon.com/cw/Minstrel_N">
   <img
