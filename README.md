@@ -47,7 +47,7 @@ Compendium source documents are not modified automatically.
 
 </div>
 <br>
-N-FVTT-MOD is dedicated to building practical enhancements specifically for the **Pathfinder Second Edition system on Foundry VTT**.
+N-FVTT-MOD is dedicated to building practical enhancements specifically for the <strong>Pathfinder Second Edition system on Foundry VTT</strong>.
 
 Our Patreon includes additional premium modules focused on improving PF2E gameplay, GM workflows, interface usability, automation, and system-specific features.
 <div align="center">
