@@ -37,7 +37,7 @@ Compendium source documents are not modified automatically.
 ---
 <div align="center">
 
-<a href=https://www.patreon.com/cw/Minstrel_N>
+<a href=https://www.patreon.com/Minstrel_N/posts/n-fvtt-mod-start-170776307>
   <img
     src="./assets/patreon-banner.svg"
     alt="More Detailed Modules Display on Patreon"
