@@ -1,4 +1,4 @@
-import { MODULE_ID, SETTINGS, TRAIT_SCOPES } from "./constants.mjs";
+import { MODULE_ID, SETTINGS, TRAIT_CONFIG_KEYS, TRAIT_SCOPES } from "./constants.mjs";
 import { log } from "./logger.mjs";
 
 let originalTraitIds = null;
@@ -47,7 +47,7 @@ export function cloneTraits(traits) {
 export function captureOriginalTraitIds() {
   if (originalTraitIds || !CONFIG?.PF2E) return;
   originalTraitIds = new Map();
-  for (const key of TRAIT_SCOPES) {
+  for (const key of TRAIT_CONFIG_KEYS) {
     const record = CONFIG.PF2E[key];
     originalTraitIds.set(key, new Set(record && typeof record === "object" ? Object.keys(record) : []));
   }
@@ -66,7 +66,10 @@ export function getReservedTraitIds() {
 function removeInjectedTraits() {
   if (!CONFIG?.PF2E || !originalTraitIds) return;
   for (const id of injectedTraitIds) {
-    for (const key of TRAIT_SCOPES) {
+    // Clean up every table this module may have injected into in an earlier
+    // synchronization, including the reserved identity tables. New versions
+    // never inject custom traits into classTraits or ancestryTraits.
+    for (const key of TRAIT_CONFIG_KEYS) {
       const record = CONFIG.PF2E[key];
       if (!record || typeof record !== "object") continue;
       if (!originalTraitIds.get(key)?.has(id)) delete record[id];
